@@ -37,22 +37,46 @@ namespace WpfRadioCheckbox
             RoleList.Add(this);
         }
 
+        public class RoleCheckboxItem
+        {
+            public string Name { get; set; }
+            public bool IsChecked { get; set; }
+            public RoleCheckboxItem(string name, bool isChecked)
+            {
+                this.Name = name;
+                this.IsChecked = isChecked;
+            }
+        }
+
         public string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("ID:{0} Name:{1}\n", Id, Name);
             sb.AppendFormat("    Knows About: ");
-            foreach (KeyValuePair<ePug, bool> kv in KnowsAboutMap)
+
+            List<RoleCheckboxItem> knowsAboutList = toCheckboxList(KnowsAboutMap);
+            foreach (var item in knowsAboutList)
             {
-                sb.AppendFormat("{0}:{1}, ", kv.Key, kv.Value);
+                sb.AppendFormat("{0}:{1}, ", item.Name, item.IsChecked);
             }
+
             sb.Append("\n");
             sb.AppendFormat("    Auto Signup On: ");
-            foreach (KeyValuePair<ePug, bool> kv in AutoSignupMap)
+            List<RoleCheckboxItem> autoSignupList = toCheckboxList(AutoSignupMap);
+            foreach (var item in autoSignupList)
             {
-                sb.AppendFormat("{0}:{1}, ", kv.Key, kv.Value);
+                sb.AppendFormat("{0}:{1}, ", item.Name, item.IsChecked);
             }
             return sb.ToString();
+        }
+        private List<RoleCheckboxItem> toCheckboxList(Dictionary<ePug, bool> dict)
+        {
+            List<RoleCheckboxItem> checkboxList = new List<RoleCheckboxItem>();
+            foreach (KeyValuePair<ePug, bool> kv in dict)
+            {
+                checkboxList.Add(new RoleCheckboxItem(kv.Key.ToString(), kv.Value));
+            }
+            return checkboxList;
         }
     }
 }
