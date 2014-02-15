@@ -5,6 +5,13 @@
     Title="Window1" Height="400" Width="500">
     <Window.Resources>
         <Style x:Key="RadioButtonListStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel IsItemsHost="True" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
                     <Style TargetType="{x:Type ListBoxItem}">
@@ -25,6 +32,13 @@
             </Setter>
         </Style>
         <Style x:Key="CheckboxListStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel IsItemsHost="True" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
             <Setter Property="SelectionMode" Value="Multiple" />
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
