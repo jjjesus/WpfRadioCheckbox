@@ -15,7 +15,23 @@ namespace WpfRadioCheckbox
             SP_PUG
         }
         public Dictionary<ePug, bool> KnowsAboutMap;
+        public List<RoleCheckboxItem> KnowsAboutChecklist
+        {
+            get
+            {
+                List<RoleCheckboxItem> knowsAboutList = ToCheckboxList(KnowsAboutMap);
+                return knowsAboutList;
+            }
+        }
         public Dictionary<ePug, bool> AutoSignupMap;
+        public List<RoleCheckboxItem> AutoSignupChecklist
+        {
+            get
+            {
+                List<RoleCheckboxItem> autoSignupList= ToCheckboxList(AutoSignupMap);
+                return autoSignupList;
+            }
+        }
         public string Name { get; set; }
         public int Id { get; set; }
 
@@ -48,13 +64,13 @@ namespace WpfRadioCheckbox
             }
         }
 
-        public string ToString()
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("ID:{0} Name:{1}\n", Id, Name);
             sb.AppendFormat("    Knows About: ");
 
-            List<RoleCheckboxItem> knowsAboutList = toCheckboxList(KnowsAboutMap);
+            List<RoleCheckboxItem> knowsAboutList = ToCheckboxList(KnowsAboutMap);
             foreach (var item in knowsAboutList)
             {
                 sb.AppendFormat("{0}:{1}, ", item.Name, item.IsChecked);
@@ -62,14 +78,14 @@ namespace WpfRadioCheckbox
 
             sb.Append("\n");
             sb.AppendFormat("    Auto Signup On: ");
-            List<RoleCheckboxItem> autoSignupList = toCheckboxList(AutoSignupMap);
+            List<RoleCheckboxItem> autoSignupList = ToCheckboxList(AutoSignupMap);
             foreach (var item in autoSignupList)
             {
                 sb.AppendFormat("{0}:{1}, ", item.Name, item.IsChecked);
             }
             return sb.ToString();
         }
-        private List<RoleCheckboxItem> toCheckboxList(Dictionary<ePug, bool> dict)
+        public List<RoleCheckboxItem> ToCheckboxList(Dictionary<ePug, bool> dict)
         {
             List<RoleCheckboxItem> checkboxList = new List<RoleCheckboxItem>();
             foreach (KeyValuePair<ePug, bool> kv in dict)

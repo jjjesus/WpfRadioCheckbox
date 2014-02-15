@@ -12,6 +12,22 @@ namespace WpfRadioCheckbox
         {
             _messageText = "Click Load to get the Roles.";
         }
+
+
+        List<CnmRole> _roleList;
+        public List<CnmRole> RoleList
+        {
+            get
+            {
+                return this._roleList;
+            }
+            set
+            {
+                this._roleList = value;
+                OnPropertyChanged("RoleList");
+            }
+        }
+
         string _messageText;
         public string MessageText
         {
@@ -39,6 +55,7 @@ namespace WpfRadioCheckbox
         public void Load()
         {
             TopoDataService.LoadDataService();
+            RoleList = new List<CnmRole>(CnmRole.RoleList);
             MessageText = TopoDataService.DumpRoles();
         }
     }
