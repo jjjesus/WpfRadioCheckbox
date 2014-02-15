@@ -90,7 +90,9 @@ namespace WpfRadioCheckbox
             List<RoleCheckboxItem> checkboxList = new List<RoleCheckboxItem>();
             foreach (KeyValuePair<ePug, bool> kv in dict)
             {
-                checkboxList.Add(new RoleCheckboxItem(kv.Key.ToString(), kv.Value));
+                checkboxList.Add(new RoleCheckboxItem(
+                    kv.Key.ToString().Replace("_PUG",String.Empty),
+                    kv.Value));
             }
             return checkboxList;
         }
