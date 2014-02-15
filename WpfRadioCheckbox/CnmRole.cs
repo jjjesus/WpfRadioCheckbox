@@ -46,6 +46,8 @@ namespace WpfRadioCheckbox
             {
                 sb.AppendFormat("{0}:{1}, ", kv.Key, kv.Value);
             }
+            sb.Append("\n");
+            sb.AppendFormat("    Auto Signup On: ");
             foreach (KeyValuePair<ePug, bool> kv in AutoSignupMap)
             {
                 sb.AppendFormat("{0}:{1}, ", kv.Key, kv.Value);
