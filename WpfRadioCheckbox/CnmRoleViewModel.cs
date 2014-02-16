@@ -39,7 +39,9 @@ namespace WpfRadioCheckbox
             }
         }
 
-
+        // TODO: The radios and checkboxes are not displaying actual values.
+        // TODO: Do not wrap raw values in Role.
+        //
         public List<RoleCheckboxItem> KnowsAboutChecklist
         {
             get
