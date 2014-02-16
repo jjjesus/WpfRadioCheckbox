@@ -16,7 +16,7 @@ namespace WpfRadioCheckbox
                     "Rock_Roll", 
                     1, 
                     new Dictionary<CnmRole.ePug, bool>() { 
-                        { CnmRole.ePug.RC_PUG, false },
+                        { CnmRole.ePug.RC_PUG, true },
                         { CnmRole.ePug.DREX_PUG, false },
                         { CnmRole.ePug.RP_PUG, false },
                         { CnmRole.ePug.SP_PUG, false }
@@ -30,7 +30,7 @@ namespace WpfRadioCheckbox
                 ),
                 new CnmRole(
                     "Soft_Rock_Roll",
-                    1,
+                    2,
                     new Dictionary<CnmRole.ePug, bool>() { 
                         { CnmRole.ePug.RC_PUG, false },
                         { CnmRole.ePug.DREX_PUG, false },
@@ -41,6 +41,38 @@ namespace WpfRadioCheckbox
                         { CnmRole.ePug.RC_PUG, false },
                         { CnmRole.ePug.DREX_PUG, false },
                         { CnmRole.ePug.RP_PUG, false },
+                        { CnmRole.ePug.SP_PUG, true }
+                    }
+                ),
+                new CnmRole(
+                    "Classic_Rock_Roll",
+                    3,
+                    new Dictionary<CnmRole.ePug, bool>() { 
+                        { CnmRole.ePug.RC_PUG, false },
+                        { CnmRole.ePug.DREX_PUG, true },
+                        { CnmRole.ePug.RP_PUG, false },
+                        { CnmRole.ePug.SP_PUG, false }
+                    },
+                    new Dictionary<CnmRole.ePug, bool>() { 
+                        { CnmRole.ePug.RC_PUG, false },
+                        { CnmRole.ePug.DREX_PUG, false },
+                        { CnmRole.ePug.RP_PUG, false },
+                        { CnmRole.ePug.SP_PUG, false }
+                    }
+                ),
+                new CnmRole(
+                    "Hard_Rock_Roll",
+                    4,
+                    new Dictionary<CnmRole.ePug, bool>() { 
+                        { CnmRole.ePug.RC_PUG, false },
+                        { CnmRole.ePug.DREX_PUG, false },
+                        { CnmRole.ePug.RP_PUG, false },
+                        { CnmRole.ePug.SP_PUG, false }
+                    },
+                    new Dictionary<CnmRole.ePug, bool>() { 
+                        { CnmRole.ePug.RC_PUG, false },
+                        { CnmRole.ePug.DREX_PUG, false },
+                        { CnmRole.ePug.RP_PUG, true },
                         { CnmRole.ePug.SP_PUG, false }
                     }
                 ),

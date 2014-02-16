@@ -14,17 +14,17 @@ namespace WpfRadioCheckbox
         }
 
 
-        List<CnmRole> _roleList;
-        public List<CnmRole> RoleList
+        List<CnmRoleViewModel> _roleViewModelList;
+        public List<CnmRoleViewModel> RoleViewModelList
         {
             get
             {
-                return this._roleList;
+                return this._roleViewModelList;
             }
             set
             {
-                this._roleList = value;
-                OnPropertyChanged("RoleList");
+                this._roleViewModelList = value;
+                OnPropertyChanged("RoleViewModelList");
             }
         }
 
@@ -55,7 +55,12 @@ namespace WpfRadioCheckbox
         public void Load()
         {
             TopoDataService.LoadDataService();
-            RoleList = new List<CnmRole>(CnmRole.RoleList);
+
+            RoleViewModelList = new List<CnmRoleViewModel>();
+            foreach (CnmRole role in CnmRole.RoleList)
+            {
+                RoleViewModelList.Add(new CnmRoleViewModel(role));
+            }
             MessageText = TopoDataService.DumpRoles();
         }
     }
