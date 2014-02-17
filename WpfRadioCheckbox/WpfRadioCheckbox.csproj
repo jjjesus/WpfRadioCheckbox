@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="CnmRole.cs" />
     <Compile Include="CnmRoleViewModel.cs" />
+    <Compile Include="DebugConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
