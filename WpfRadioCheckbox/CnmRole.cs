@@ -14,8 +14,8 @@ namespace WpfRadioCheckbox
             RP_PUG,
             SP_PUG
         }
-        public Dictionary<ePug, bool> KnowsAboutMap;
-        public Dictionary<ePug, bool> AutoSignupMap;
+        public List<CheckboxItem> KnowsAboutMap;
+        public List<CheckboxItem> AutoSignupMap;
         public string Name { get; set; }
         public int Id { get; set; }
 
@@ -27,8 +27,8 @@ namespace WpfRadioCheckbox
         public CnmRole(
             string name,
             int id,
-            Dictionary<ePug, bool> knowsAboutMap,
-            Dictionary<ePug, bool> autoSignupMap)
+            List<CheckboxItem> knowsAboutMap,
+            List<CheckboxItem> autoSignupMap)
         {
             this.Name = name;
             this.Id = id;
@@ -45,14 +45,14 @@ namespace WpfRadioCheckbox
 
             foreach (var item in KnowsAboutMap)
             {
-                sb.AppendFormat("{0}:{1}, ", item.Key, item.Value);
+                sb.AppendFormat("{0}:{1}, ", item.Name, item.IsChecked);
             }
 
             sb.Append("\n");
             sb.AppendFormat("    Auto Signup On: ");
             foreach (var item in AutoSignupMap)
             {
-                sb.AppendFormat("{0}:{1}, ", item.Key, item.Value);
+                sb.AppendFormat("{0}:{1}, ", item.Name, item.IsChecked);
             }
             return sb.ToString();
         }

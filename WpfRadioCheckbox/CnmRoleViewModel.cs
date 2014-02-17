@@ -28,25 +28,14 @@ namespace WpfRadioCheckbox
             RoleList.Add(this);
         }
 
-        public class RoleCheckboxItem
-        {
-            public string Name { get; set; }
-            public bool IsChecked { get; set; }
-            public RoleCheckboxItem(string name, bool isChecked)
-            {
-                this.Name = name;
-                this.IsChecked = isChecked;
-            }
-        }
-
         // TODO: The radios and checkboxes are not displaying actual values.
         // TODO: Do not wrap raw values in Role.
         //
-        public List<RoleCheckboxItem> KnowsAboutChecklist
+        public List<CheckboxItem> KnowsAboutChecklist
         {
             get
             {
-                List<RoleCheckboxItem> knowsAboutList = ToCheckboxList(_role.KnowsAboutMap);
+                List<CheckboxItem> knowsAboutList = ToCheckboxList(_role.KnowsAboutMap);
                 return knowsAboutList;
             }
             set
@@ -55,11 +44,11 @@ namespace WpfRadioCheckbox
                 OnPropertyChanged("KnowsAboutChecklist");
             }
         }
-        public List<RoleCheckboxItem> AutoSignupChecklist
+        public List<CheckboxItem> AutoSignupChecklist
         {
             get
             {
-                List<RoleCheckboxItem> autoSignupList = ToCheckboxList(_role.AutoSignupMap);
+                List<CheckboxItem> autoSignupList = ToCheckboxList(_role.AutoSignupMap);
                 return autoSignupList;
             }
             set
@@ -68,14 +57,14 @@ namespace WpfRadioCheckbox
                 OnPropertyChanged("AutoSignupChecklist");
             }
         }
-        public List<RoleCheckboxItem> ToCheckboxList(Dictionary<CnmRole.ePug, bool> dict)
+        public List<CheckboxItem> ToCheckboxList(List<CheckboxItem> dict)
         {
-            List<RoleCheckboxItem> checkboxList = new List<RoleCheckboxItem>();
-            foreach (KeyValuePair<CnmRole.ePug, bool> kv in dict)
+            List<CheckboxItem> checkboxList = new List<CheckboxItem>();
+            foreach (CheckboxItem kv in dict)
             {
-                checkboxList.Add(new RoleCheckboxItem(
-                    kv.Key.ToString().Replace("_PUG", String.Empty),
-                    kv.Value));
+                checkboxList.Add(new CheckboxItem(
+                    kv.Name.Replace("_PUG", String.Empty),
+                    kv.IsChecked));
             }
             return checkboxList;
         }
