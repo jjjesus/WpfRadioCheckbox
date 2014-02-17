@@ -16,64 +16,64 @@ namespace WpfRadioCheckbox
                     "Rock_Roll", 
                     1, 
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", true ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Rock_Roll", "RC_PUG", true ),
+                        new CheckboxItem( "Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Rock_Roll", "SP_PUG", false )
                     },
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Rock_Roll", "SP_PUG", false )
                     }
                 ),
                 new CnmRole(
                     "Soft_Rock_Roll",
                     2,
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Soft_Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Soft_Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Soft_Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Soft_Rock_Roll", "SP_PUG", false )
                     },
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", true )
+                        new CheckboxItem( "Soft_Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Soft_Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Soft_Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Soft_Rock_Roll", "SP_PUG", true )
                     }
                 ),
                 new CnmRole(
                     "Classic_Rock_Roll",
                     3,
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", true ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Classic_Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Classic_Rock_Roll", "DREX_PUG", true ),
+                        new CheckboxItem( "Classic_Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Classic_Rock_Roll", "SP_PUG", false )
                     },
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Classic_Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Classic_Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Classic_Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Classic_Rock_Roll", "SP_PUG", false )
                     }
                 ),
                 new CnmRole(
                     "Hard_Rock_Roll",
                     4,
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", false ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Hard_Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Hard_Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Hard_Rock_Roll", "RP_PUG", false ),
+                        new CheckboxItem( "Hard_Rock_Roll", "SP_PUG", false )
                     },
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", false ),
-                        new CheckboxItem( "DREX_PUG", false ),
-                        new CheckboxItem( "RP_PUG", true ),
-                        new CheckboxItem( "SP_PUG", false )
+                        new CheckboxItem( "Hard_Rock_Roll", "RC_PUG", false ),
+                        new CheckboxItem( "Hard_Rock_Roll", "DREX_PUG", false ),
+                        new CheckboxItem( "Hard_Rock_Roll", "RP_PUG", true ),
+                        new CheckboxItem( "Hard_Rock_Roll", "SP_PUG", false )
                     }
                 )
             };
