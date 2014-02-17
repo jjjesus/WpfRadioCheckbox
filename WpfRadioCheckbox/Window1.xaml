@@ -2,7 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:WpfRadioCheckbox"
-    Title="Window1" Height="500" Width="800">
+    Title="Window1" Height="500" Width="960">
     <Window.Resources>
         <Style x:Key="RadioButtonListStyle" TargetType="{x:Type ListBox}">
             <Setter Property="ItemsPanel">
@@ -21,8 +21,7 @@
                                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
                                     <RadioButton
                                         Focusable="False"
-                                        IsChecked="{Binding IsChecked, Mode=TwoWay,
-                                                    Converter={local:DebugConverter}}">
+                                        IsChecked="{Binding IsChecked, Mode=TwoWay}">
                                         <ContentPresenter></ContentPresenter>
                                     </RadioButton>
                                 </ControlTemplate>
@@ -49,8 +48,7 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
                                     <CheckBox Focusable="False"
-                                        IsChecked="{Binding IsChecked, Mode=TwoWay,
-                                                    Converter={local:DebugConverter}}">
+                                        IsChecked="{Binding IsChecked, Mode=TwoWay}">
                                         <ContentPresenter />
                                     </CheckBox>
                                 </ControlTemplate>
@@ -65,8 +63,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="180" />
-                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Margin="5" Text="{Binding Name}" />
                 <TextBlock Grid.Column="1" Margin="5" Text="{Binding Id}" />
@@ -98,6 +96,8 @@
             </Grid>
             <ListBox ItemsSource="{Binding RoleViewModelList}" ItemTemplate="{StaticResource RoleItemTemplate}">
             </ListBox>
+            <TextBox Margin="5" Text="After messing with settings above, click Dump to display changes." />
+            <Button Margin="5"  Height ="23" Width ="100" Content="Dump" Click="DumpModel" />
             <TextBox Margin="5"  Height="266" Text="{Binding Path=MessageText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="764" />
         </StackPanel>
     </Grid>

@@ -61,6 +61,9 @@ namespace WpfRadioCheckbox
             {
                 RoleViewModelList.Add(new CnmRoleViewModel(role));
             }
+        }
+        public void Dump()
+        {
             MessageText = TopoDataService.DumpRoles();
         }
     }

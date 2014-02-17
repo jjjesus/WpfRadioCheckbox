@@ -32,7 +32,7 @@ namespace WpfRadioCheckbox
                     "Soft_Rock_Roll",
                     2,
                     new List<CheckboxItem>() { 
-                        new CheckboxItem( "RC_PUG", true ),
+                        new CheckboxItem( "RC_PUG", false ),
                         new CheckboxItem( "DREX_PUG", false ),
                         new CheckboxItem( "RP_PUG", false ),
                         new CheckboxItem( "SP_PUG", false )

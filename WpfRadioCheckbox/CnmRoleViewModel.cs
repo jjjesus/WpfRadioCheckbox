@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 
 
 namespace WpfRadioCheckbox
@@ -26,48 +27,16 @@ namespace WpfRadioCheckbox
         {
             this._role = role;
             RoleList.Add(this);
+            KnowsAboutChecklist = new ObservableCollection<CheckboxItem>(_role.KnowsAboutMap);
+            AutoSignupChecklist = new ObservableCollection<CheckboxItem>(_role.AutoSignupMap);
         }
 
         // TODO: The radios and checkboxes are not displaying actual values.
         // TODO: Do not wrap raw values in Role.
         //
-        public List<CheckboxItem> KnowsAboutChecklist
-        {
-            get
-            {
-                List<CheckboxItem> knowsAboutList = ToCheckboxList(_role.KnowsAboutMap);
-                return knowsAboutList;
-            }
-            set
-            {
-                KnowsAboutChecklist = value;
-                OnPropertyChanged("KnowsAboutChecklist");
-            }
-        }
-        public List<CheckboxItem> AutoSignupChecklist
-        {
-            get
-            {
-                List<CheckboxItem> autoSignupList = ToCheckboxList(_role.AutoSignupMap);
-                return autoSignupList;
-            }
-            set
-            {
-                AutoSignupChecklist = value;
-                OnPropertyChanged("AutoSignupChecklist");
-            }
-        }
-        public List<CheckboxItem> ToCheckboxList(List<CheckboxItem> dict)
-        {
-            List<CheckboxItem> checkboxList = new List<CheckboxItem>();
-            foreach (CheckboxItem kv in dict)
-            {
-                checkboxList.Add(new CheckboxItem(
-                    kv.Name.Replace("_PUG", String.Empty),
-                    kv.IsChecked));
-            }
-            return checkboxList;
-        }
+        public ObservableCollection<CheckboxItem> KnowsAboutChecklist { get; set; }
+        public ObservableCollection<CheckboxItem> AutoSignupChecklist { get; set; }
+
         // Create the OnPropertyChanged method to raise the event 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)

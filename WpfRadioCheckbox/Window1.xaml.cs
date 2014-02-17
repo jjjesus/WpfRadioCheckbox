@@ -31,5 +31,10 @@ namespace WpfRadioCheckbox
         {
             ViewModel.Load();
         }
+
+        private void DumpModel(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Dump();
+        }
     }
 }
