@@ -20,6 +20,7 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
                                     <RadioButton
+                                        GroupName="{Binding GroupName}"
                                         Focusable="False"
                                         IsChecked="{Binding IsChecked, Mode=TwoWay}">
                                         <ContentPresenter></ContentPresenter>
